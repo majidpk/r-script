@@ -36,7 +36,7 @@ R.prototype.call = function(_opts, _callback) {
      body += d;
   });
   child.on("close", function(code) {
-    callback(null, JSON.parse(body));
+    if (body) callback(null, JSON.parse(body));
   });
 };
 
